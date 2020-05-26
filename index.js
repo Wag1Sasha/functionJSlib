@@ -11,6 +11,7 @@ console.log(filter(arr, filtred));
 console.log(find(arr, findNumber));
 console.log(indexOf(arr, 15));
 
+
 function findNumber(elem) {
   return elem < 3;
 }
@@ -22,3 +23,4 @@ function reducer(acc, currentValue) {
 function filtred(elem) {
   return elem < 3;
 }
+
