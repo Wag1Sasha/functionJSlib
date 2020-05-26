@@ -6,31 +6,31 @@ test("sum of numbers with initValue:", () => {
     return acc + currentValue;
   }
 
-  expect(reduceNumbers(arr, reducer, 15)).toBe(21);
+  expect(reduceNumbers(arr, reducer, 15)).toBe(arr.reduce(reducer, 15));
 });
 
 test("sum of numbers without initValue:", () => {
   const arr = [1, 2, 3];
-  function reducer(acc, currentValue) {
+  function sum(acc, currentValue) {
     return acc + currentValue;
   }
 
-  expect(reduceNumbers(arr, reducer)).toBe(6);
+  expect(reduceNumbers(arr, sum)).toBe(arr.reduce(sum));
 });
 
 test("reducer with negative numbers:", () => {
   const arr = [-1, -2, +3];
-  function reducer(acc, currentValue) {
+  function sumAcc(acc, currentValue) {
     return acc + currentValue;
   }
 
-  expect(reduceNumbers(arr, reducer)).toBe(0);
+  expect(reduceNumbers(arr, sumAcc)).toBe(arr.reduce(sumAcc));
 });
 
 test("reducer multiplier numbers with initValue:", () => {
   const arr = [1, 2, 3];
-  function reducer(acc, currentValue) {
+  function multiplyAcc(acc, currentValue) {
     return acc * currentValue;
   }
-  expect(reduceNumbers(arr, reducer,10)).toBe(60);
+  expect(reduceNumbers(arr, multiplyAcc, 10)).toBe(arr.reduce(multiplyAcc, 10));
 });
