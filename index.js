@@ -1,3 +1,4 @@
+const _ = require("lodash");
 const map = require("./lib/map");
 const reduceNumbers = require("./lib/reduceNumbers");
 const filter = require("./lib/filter");
@@ -8,10 +9,12 @@ const forEach = require("./lib/forEach");
 const concatTwoArrays = require("./lib/concatTwoArrays");
 const fill = require("./lib/fill");
 const findIndex = require("./lib/findIndex");
+const compact = require("./lib/compact");
 
-let arr = [1, 5, 2, 3, 15, 22, 31];
+let arr = [1, 5, false, 3, 15, "", 31];
 let arr2 = [55, 66, 77];
 let copyArr = [];
+let arr3 = [1, "", "true", true, NaN, false, 2, undefined];
 console.log(map(arr, (item) => item + 1));
 console.log(reduceNumbers(arr, reducer));
 console.log(filter(arr, filtred));
@@ -22,6 +25,8 @@ console.log(forEach(arr, makeCopy));
 console.log(concatTwoArrays(arr, arr2));
 console.log(fill(arr, 2));
 console.log(findIndex(arr, 5));
+console.log(_.compact(arr3));
+console.log(compact(arr3));
 
 function makeCopy(item) {
   return copyArr.push(item);
