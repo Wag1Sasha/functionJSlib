@@ -10,8 +10,9 @@ const concatTwoArrays = require("./lib/concatTwoArrays");
 const fill = require("./lib/fill");
 const findIndex = require("./lib/findIndex");
 const compact = require("./lib/compact");
+const chunk = require("./lib/chunk");
 
-let arr = [1, 5, false, 3, 15, "", 31];
+let arr = [1, 2, 3, 4, 5, 6, 7, 6, 3, 2];
 let arr2 = [55, 66, 77];
 let copyArr = [];
 let arr3 = [1, "", "true", true, NaN, false, 2, undefined];
@@ -27,6 +28,8 @@ console.log(fill(arr, 2));
 console.log(findIndex(arr, 5));
 console.log(_.compact(arr3));
 console.log(compact(arr3));
+console.log(_.chunk(arr, 3));
+console.log(chunk(arr, 3));
 
 function makeCopy(item) {
   return copyArr.push(item);
